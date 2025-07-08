@@ -1,0 +1,10 @@
+<bean id="smsService" class="com.example.service.SMSService" />
+
+<bean id="notificationManagerConstructor"
+      class="com.example.client.NotificationManagerConstructor">
+    <constructor-arg ref="smsService"/>
+</bean>
+
+<bean id="notificationManager" class="com.example.client.NotificationManager">
+    <property name="messageService" ref="emailService" />
+</bean>
